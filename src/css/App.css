@@ -35,12 +35,13 @@ body {
   --text-secondary: #6b7280;
   --text-light: #9ca3af;
   --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
+  --bg-secondary: #cfdbe7;
   --bg-dark: #1f2937;
-  --border: #e5e7eb;
+  --border: #d0dbf1;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
+
 
 .section-title {
   font-size: 3rem;
