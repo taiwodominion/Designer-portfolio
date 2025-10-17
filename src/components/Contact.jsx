@@ -11,7 +11,6 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
 
-  // regex patterns
   const nameRegex = /^[a-zA-Z\s]{3,50}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,14 +22,14 @@ const Contact = () => {
   const validateForm = () => {
     let formErrors = {};
 
-    if (!nameRegex.test(formData.name)) {
-      formErrors.name = "Enter a valid name (letters only, min 3 chars).";
+    if (!nameRegex.test(formData.name.trim())) {
+      formErrors.name = "Please enter a valid name (min 3 characters).";
     }
-    if (!emailRegex.test(formData.email)) {
-      formErrors.email = "Enter a valid email address.";
+    if (!emailRegex.test(formData.email.trim())) {
+      formErrors.email = "Please enter a valid email address.";
     }
     if (formData.message.trim().length < 10) {
-      formErrors.message = "Message must be at least 10 characters.";
+      formErrors.message = "Your message should be at least 10 characters long.";
     }
 
     setErrors(formErrors);
@@ -42,23 +41,25 @@ const Contact = () => {
     setSuccess("");
 
     if (validateForm()) {
-      console.log("Form data ready to send:", formData);
-      setSuccess("✅ Message is ready to be sent!");
-      setFormData({ name: "", email: "", message: "" }); // reset form
+      console.log("Form submitted:", formData);
+      setSuccess("✅ Thank you! Your message has been prepared to send.");
+      setFormData({ name: "", email: "", message: "" });
     }
   };
 
   return (
     <section className="contact-section">
-      <h2 className="contact-title">Get In Touch</h2>
-      <p className="contact-subtitle">Let’s work together on your next project!</p>
+      <h2 className="contact-title">Let’s Collaborate</h2>
+      <p className="contact-subtitle">
+        Have a project idea, collaboration, or design inquiry? Fill out the form below — I’d love to hear from you.
+      </p>
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div className="form-group">
           <input
             type="text"
             name="name"
-            placeholder="Your Name"
+            placeholder="Your Full Name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -70,7 +71,7 @@ const Contact = () => {
           <input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder="Your Email Address"
             value={formData.email}
             onChange={handleChange}
             required
@@ -81,7 +82,7 @@ const Contact = () => {
         <div className="form-group">
           <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder="Write your message..."
             value={formData.message}
             onChange={handleChange}
             required

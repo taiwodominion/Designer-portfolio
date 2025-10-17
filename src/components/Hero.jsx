@@ -1,136 +1,50 @@
-// import React from 'react';
-// import '../css/Hero.css';
-
-// const Hero = () => {
-//   return (
-//     <section className="hero-section">
-//       <div className="hero-background">
-//         <div className="background-circle circle-red"></div>
-//         <div className="background-circle circle-orange"></div>
-//       </div>
-
-//       <div className="hero-wrapper">
-//         <div className="hero-main">
-//           {/* <div className="profile-avatar">
-//             <div className="avatar-outline">
-//               <div className="avatar-core">
-//                 <span className="avatar-initials">RG</span>
-//               </div>
-//             </div>
-//           </div> */}
-
-//           <h1 className="hero-heading">
-//             <span className="heading-gradient">
-//               Roland Gideon
-//             </span>
-//           </h1>
-          
-//           <p className="hero-subtext">
-//             UI/UX & Graphic Designer crafting exceptional digital experiences that blend 
-//             <span className="accent-one"> beauty</span> with 
-//             <span className="accent-two"> functionality</span>
-//           </p>
-
-//           <div className="hero-actions">
-//             <a href='#portfolio' className="btn-primary">
-//               View My Work
-//             </a>
-//             <a href='#Contact' className="btn-secondary">
-//               Let's Connect
-//             </a>
-//           </div>
-
-//           <div className="hero-metrics">
-//             <div className="metric">
-//               <div className="metric-value">50+</div>
-//               <div className="metric-label">Projects</div>
-//             </div>
-//             <div className="metric">
-//               <div className="metric-value">5</div>
-//               <div className="metric-label">Years Exp</div>
-//             </div>
-//             <div className="metric">
-//               <div className="metric-value">30+</div>
-//               <div className="metric-label">Happy Clients</div>
-//             </div>
-//           </div>
-//           <div className="profile-avatar">
-//             <div className="avatar-outline">
-//               <div className="avatar-core">
-//                 <span className="avatar-initials">RG</span>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-
-import React from 'react';
-import '../css/Hero.css';
+import heroImage from "../assets/gideon_pic.jpg";
+import "../css/Hero.css";
 
 const Hero = () => {
   return (
-    <section className="hero-section">
-      <div className="hero-background">
-        <div className="background-circle circle-red"></div>
-        <div className="background-circle circle-orange"></div>
-      </div>
+    <section className="hero" id="home">
+      <div className="container">
+        <div className="hero-content">
+          <h1>Hi, I'm Roland Gideon</h1>
+          <p className="hero-subtext">
+            UI/UX & Graphic Designer crafting exceptional digital experiences
+            that blend
+            <span className="accent-one"> beauty</span> with
+            <span className="accent-two"> functionality</span>
+          </p>
 
-      <div className="hero-wrapper">
-        <div className="hero-main">
-          {/* Avatar Section - Moved to top for better mobile flow */}
-          <div className="profile-avatar">
-            <div className="avatar-outline">
-              <div className="avatar-core">
-                <span className="avatar-initials">RG</span>
-              </div>
-            </div>
+          <div className="hero-btns">
+            <a href="#projects" className="btn">
+              View My Work
+            </a>
+            <a href="#contact" className="btn btn-outline">
+              Contact Me
+            </a>
           </div>
-
-          {/* Content Section */}
-          <div className="hero-content">
-            <h1 className="hero-heading">
-              <span className="heading-gradient">
-                Roland Gideon
-              </span>
-            </h1>
-            
-            <p className="hero-subtext">
-              UI/UX & Graphic Designer crafting exceptional digital experiences that blend 
-              <span className="accent-one"> beauty</span> with 
-              <span className="accent-two"> functionality</span>
-            </p>
-
-            <div className="hero-actions">
-              <a href='#portfolio' className="btn-primary">
-                View My Work
-              </a>
-              <a href='#contact' className="btn-secondary"> {/* Fixed ID */}
-                Let's Connect
-              </a>
+          <div className="trust-indicators">
+            <div className="indicator">
+              <span className="indicator-number">5+</span>
+              <span className="indicator-label">Projects</span>
             </div>
-
-            <div className="hero-metrics">
-              <div className="metric">
-                <div className="metric-value">20+</div>
-                <div className="metric-label">Projects</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">3</div>
-                <div className="metric-label">Years Exp</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">20+</div>
-                <div className="metric-label">Happy Clients</div>
-              </div>
+            <div className="indicator">
+              <span className="indicator-number">2+</span>
+              <span className="indicator-label">Years</span>
+            </div>
+            <div className="indicator">
+              <span className="indicator-number">98%</span>
+              <span className="indicator-label">Satisfaction</span>
             </div>
           </div>
         </div>
+      </div>
+      <div className="hero-image-container">
+        <img
+          src={heroImage}
+          alt="Taiwo Dominion"
+          className="profile-image"
+          loading="lazy"
+        />
       </div>
     </section>
   );
